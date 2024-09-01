@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ContactCard from './ContactCard';
 
 function ContactList({ contact }) {
@@ -10,7 +10,7 @@ function ContactList({ contact }) {
     <div className='ui celled list'>
       {renderList}
     </div>
-  )
+  );
 }
 
-export default ContactList
+export default ContactList;

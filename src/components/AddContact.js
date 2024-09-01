@@ -5,21 +5,20 @@ const AddContact = ({ addContactHandler }) => {
   const [email, setEmail] = useState("");
 
   const addHandler = (e) => {
-      e.preventDefault()
-      if(name === "" || email === ""){
-        alert("Its mandatory")
-        return
-      }
-      addContactHandler({name , email})
-      setName("")
-      setEmail("")
-      // console.log({name, email})
-  }
+    e.preventDefault();
+    if (name === "" || email === "") {
+      alert("Both fields are mandatory");
+      return;
+    }
+    addContactHandler({ name, email });
+    setName("");
+    setEmail("");
+  };
 
   return (
     <div className="ui main">
       <h2>Add Contact</h2>
-      <form className="ui form">
+      <form className="ui form" onSubmit={addHandler}>
         <div className="field">
           <label>Name</label>
           <input
@@ -40,7 +39,7 @@ const AddContact = ({ addContactHandler }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <button className="ui button blue" onClick={addHandler}>Add</button>
+        <button className="ui button blue">Add</button>
       </form>
     </div>
   );
